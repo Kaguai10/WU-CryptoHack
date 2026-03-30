@@ -5,8 +5,8 @@ Using the below integer array, convert the numbers to their corresponding ASCII 
 
 ><strong>"In Python, the chr() function can be used to convert an ASCII ordinal number to a character (the ord() function does the opposite)."</strong>
 
-Solve:
-### `solver.py`
+## Solve
+`solver.py`
 ```python
 #chr() => ascii to strings
 #ord() => strings to ascii
