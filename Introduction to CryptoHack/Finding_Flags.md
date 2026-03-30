@@ -2,4 +2,4 @@ Each challenge is designed to help introduce you to a new piece of cryptography.
 These flags will usually be in the format crypto{y0ur_f1rst_fl4g}. The flag format helps you verify that you found the correct solution.
 Try submitting this flag into the form below to solve your first challenge. 
 
-Flag: crypto{y0ur_f1rst_fl4g}
+Flag: `crypto{y0ur_f1rst_fl4g}`
