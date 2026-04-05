@@ -1,0 +1,7 @@
+Symmetric-key ciphers are algorithms that use the same key both to encrypt and decrypt data. The goal is to use short secret keys to securely and efficiently send long messages.
+
+The most famous symmetric-key cipher is Advanced Encryption Standard (AES), standardised in 2001. It's so widespread that modern processors even contain special instruction sets to perform AES operations. The first series of challenges here guides you through the inner workings of AES, showing you how its separate components work together to make it a secure cipher. By the end you will have built your own code for doing AES decryption!
+
+We can split symmetric-key ciphers into two types, block ciphers and stream ciphers. Block ciphers break up a plaintext into fixed-length blocks, and send each block through an encryption function together with a secret key. Stream ciphers meanwhile encrypt one byte of plaintext at a time, by XORing a pseudo-random keystream with the data. AES is a block cipher but can be turned into a stream cipher using modes of operation such as CTR.
+
+Block ciphers only specify how to encrypt and decrypt individual blocks, and a mode of operation must be used to apply the cipher to longer messages. This is the point where real world implementations often fail spectacularly, since developers do not understand the subtle implications of using particular modes. The remainder of the challenges see you attacking common misuses of various modes.
