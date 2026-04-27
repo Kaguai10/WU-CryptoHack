@@ -76,9 +76,60 @@ def encrypt_flag():
    63727970746f7b626c30636b5f633170683372355f3472335f663435375f217d
    ```
 
-4. **Retrieve the Flag**
+5. **Retrieve the Flag**
    After decoding the hexadecimal string, the final flag is obtained:
 
    ```
    crypto{bl0ck_c1ph3r5_4r3_f457_!}
    ```
+
+**Versi menggunakan skrip python**
+`solver.py`
+
+```python
+#!/usr/bin/env python3
+import requests
+
+BASE_URL = "https://aes.cryptohack.org/block_cipher_starter"
+
+
+def request_json(endpoint):
+    url = f"{BASE_URL}/{endpoint}/"
+    response = requests.get(url, timeout=10)
+    response.raise_for_status()
+    return response.json()
+
+
+def get_encrypted_flag():
+    data = request_json("encrypt_flag")
+    return data["ciphertext"]
+
+
+def decrypt_ciphertext(ciphertext):
+    data = request_json(f"decrypt/{ciphertext}")
+    return data["plaintext"]
+
+
+def hex_to_text(hex_string):
+    return bytes.fromhex(hex_string).decode()
+
+
+def main():
+    encrypted_flag = get_encrypted_flag()
+    decrypted_hex = decrypt_ciphertext(encrypted_flag)
+    flag = hex_to_text(decrypted_hex)
+
+    print("[+] Encrypted Flag:")
+    print(encrypted_flag)
+
+    print("\n[+] Decrypted Hex:")
+    print(decrypted_hex)
+
+    print("\n[+] Flag:")
+    print(flag)
+
+
+if __name__ == "__main__":
+    main()
+
+```
