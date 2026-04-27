@@ -1,0 +1,10 @@
+Whitfield Diffie and Martin Hellman's 1976 paper "New Directions in Cryptography" heralded a huge leap forward for the field of cryptography. The paper defined the concepts of public-key cryptosystems, one-way trapdoor functions, and digital signatures, and described a key-exchange method for securely sharing secrets over an insecure channel. Although these were independently discovered at GCHQ some years earlier, Diffie and Hellman were first to share this landmark knowledge with the world.
+
+- <a href='https://en.wikipedia.org/wiki/Public-key_cryptography'>Public key encryption</a> enables a user, Alice, to distribute a public key and others can use that public key to encrypt messages to her. Alice can then use her private key to decrypt the messages.
+- <a href='https://en.wikipedia.org/wiki/Digital_signature'>Digital signatures</a> enable Alice to use her private key to "sign" a message. Anyone can use Alice's public key to verify that the signature was created with her corresponding private key, and that the message hasn't been tampered with.
+
+Although Diffie and Hellman's paper is legendary in cryptography, it was the RSA algorithm described a year later which was the first full public-key cryptosystem. This course gets you familiar with this extremely famous cryptosystem and all the concepts described above.
+
+RSA's security is based on the difficulty of factoring large composite numbers, still considered a "hard problem", but in recent years the cryptosystem has received criticism for how easy it is to implement incorrectly. Major flaws have been found in common deployments, the most notorious of these being the ROCA vulnerability which led to Estonia suspending 760,000 national ID cards.
+
+Our challenges first introduce you to the many footguns of RSA, and soon see you performing attacks which real software has been vulnerable to. Next, you look at Diffie-Hellman key exchange and explore how the core problem behind it, the discrete logarithm, differs from RSA factorisation. The course concludes with you performing man-in-the-middle attacks on two people trying to exchange encryption keys.
