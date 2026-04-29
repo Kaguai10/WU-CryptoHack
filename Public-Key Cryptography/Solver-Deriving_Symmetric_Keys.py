@@ -25,3 +25,5 @@ plaintext = unpad(cipher.decrypt(ct_bytes), 16)
 
 print("[+] Decrypted flag:")
 print(plaintext.decode())
+
+# Flag: crypto{sh4r1ng_s3cret5_w1th_fr13nd5}
